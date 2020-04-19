@@ -21,3 +21,11 @@ code {
   background: #e62b1e !important;
   color: #fff !important;
 }
+
+.iconWarning {
+  color: orange;
+  text-align: center;
+}
+.iconWarning svg{
+  font-size: 50px;
+}

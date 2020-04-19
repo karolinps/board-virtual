@@ -9,6 +9,11 @@
       "title": "Proyecto 2b",
       "description": "Descripcion proyecto 2b",
       "id": 2
+    },
+    {
+      "title": "Proyecto 2c",
+      "description": "Proyecto sobre 2c",
+      "id": 3
     }
   ]
 }

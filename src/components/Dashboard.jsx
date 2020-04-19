@@ -17,6 +17,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import Swal from 'sweetalert2'
 import TopBarProgress from "react-topbar-progress-indicator";
 import Tooltip from '@material-ui/core/Tooltip';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 
 export default class extends Component {
     constructor() {
@@ -171,11 +172,11 @@ export default class extends Component {
                 {this.state.isLoading ?
                     <TopBarProgress /> : null
                 }
-                <h3>Tableros</h3>
+                <h2>Tableros</h2>
                 <Grid container spacing={1}>
 
-                    <Grid item sm={6} md={3}>
-                        <Button variant="contained"
+                    <Grid item sm={6} md={3} xs={12}>
+                        <Button
                             className="btn-green"
                             onClick={this.handleClickOpen}>Crear Tablero</Button>
                     </Grid>
@@ -183,7 +184,7 @@ export default class extends Component {
                 </Grid><br />
                 <Grid container spacing={1} style={{ padding: "10px" }}>
                     {this.state.boards.map(data => {
-                        return <Grid item sm={6} md={3} key={data.id}>
+                        return <Grid item sm={6} md={3} xs={6} key={data.id}>
                             <Card>
                                 <CardHeader
                                     title={data.title}
@@ -213,6 +214,7 @@ export default class extends Component {
                 >
                     <DialogContent>
                         <DialogContentText>
+                            <div className="iconWarning" ><ErrorOutlineIcon /></div>
                             <h3 style={{ textAlign: "center" }}>¿Está seguro de borrar el tablero?</h3>
                         </DialogContentText>
                     </DialogContent>
@@ -241,11 +243,9 @@ export default class extends Component {
                     <form onSubmit={(e) => this.update(e, this.state.id_board)}>
                         <DialogContent>
                             <DialogContentText>
-                                Editar datos del tablero
+                                <h3 style={{textAlign:"center"}}>Editar datos del tablero</h3>
                     </DialogContentText>
                             <TextField
-                                autoFocus
-                                margin="dense"
                                 value={this.state.title}
                                 label="Titulo"
                                 name="title"
@@ -254,8 +254,6 @@ export default class extends Component {
                                 fullWidth
                             />
                             <TextField
-                                autoFocus
-                                margin="dense"
                                 value={this.state.description}
                                 label="Descripción"
                                 name="description"
@@ -291,11 +289,9 @@ export default class extends Component {
                     <form onSubmit={this.save}>
                         <DialogContent>
                             <DialogContentText>
-                                Agregar nuevo tablero
+                                <h3 style={{textAlign:"center"}}>Agregar nuevo tablero</h3>
                     </DialogContentText>
                             <TextField
-                                autoFocus
-                                margin="dense"
                                 value={this.state.title}
                                 label="Titulo"
                                 name="title"
@@ -304,8 +300,6 @@ export default class extends Component {
                                 fullWidth
                             />
                             <TextField
-                                autoFocus
-                                margin="dense"
                                 value={this.state.description}
                                 label="Descripción"
                                 name="description"
