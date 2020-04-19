@@ -1,0 +1,14 @@
+{
+  "boards": [
+    {
+      "title": "Proyecto 2a",
+      "description": "Descripcion del proyecto 2a",
+      "id": 1
+    },
+    {
+      "title": "Proyecto 2b",
+      "description": "Descripcion proyecto 2b",
+      "id": 2
+    }
+  ]
+}
