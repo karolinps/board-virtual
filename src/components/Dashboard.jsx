@@ -18,6 +18,7 @@ import Swal from 'sweetalert2'
 import TopBarProgress from "react-topbar-progress-indicator";
 import Tooltip from '@material-ui/core/Tooltip';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import VisibilityIcon from '@material-ui/icons/Visibility';
 
 export default class extends Component {
     constructor() {
@@ -198,6 +199,9 @@ export default class extends Component {
                                     </Tooltip>
                                     <Tooltip title="Borrar Tablero">
                                         <DeleteIcon style={{ cursor: "pointer", color: "#fff" }} onClick={() => this.toggleModalDelete(data.id)} />
+                                    </Tooltip>
+                                    <Tooltip title="Ver Tablero">
+                                        <VisibilityIcon style={{ cursor: "pointer", color: "#fff" }} />
                                     </Tooltip>
                                 </CardActions>
                             </Card>
