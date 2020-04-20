@@ -19,8 +19,9 @@ import TopBarProgress from "react-topbar-progress-indicator";
 import Tooltip from '@material-ui/core/Tooltip';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import VisibilityIcon from '@material-ui/icons/Visibility';
+import {  Link } from "react-router-dom";
 
-export default class extends Component {
+export default class Dashboard extends Component {
     constructor() {
         super()
         this.state = {
@@ -169,7 +170,7 @@ export default class extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="App">
                 {this.state.isLoading ?
                     <TopBarProgress /> : null
                 }
@@ -201,7 +202,7 @@ export default class extends Component {
                                         <DeleteIcon style={{ cursor: "pointer", color: "#fff" }} onClick={() => this.toggleModalDelete(data.id)} />
                                     </Tooltip>
                                     <Tooltip title="Ver Tablero">
-                                        <VisibilityIcon style={{ cursor: "pointer", color: "#fff" }} />
+                                        <Link to={"/taks/"+data.id}><VisibilityIcon style={{ cursor: "pointer", color: "#fff" }} /></Link>
                                     </Tooltip>
                                 </CardActions>
                             </Card>
@@ -212,8 +213,6 @@ export default class extends Component {
                 <Dialog
                     open={this.state.isOpenDelete}
                     onClose={this.handleClose}
-                    aria-labelledby="alert-dialog-title"
-                    aria-describedby="alert-dialog-description"
                     fullWidth
                 >
                     <DialogContent>
@@ -240,8 +239,6 @@ export default class extends Component {
                 <Dialog
                     open={this.state.isOpenUpdate}
                     onClose={this.handleClose}
-                    aria-labelledby="alert-dialog-title"
-                    aria-describedby="alert-dialog-description"
                     fullWidth
                 >
                     <form onSubmit={(e) => this.update(e, this.state.id_board)}>
@@ -286,8 +283,6 @@ export default class extends Component {
                 <Dialog
                     open={this.state.isOpen}
                     onClose={this.handleClose}
-                    aria-labelledby="alert-dialog-title"
-                    aria-describedby="alert-dialog-description"
                     fullWidth
                 >
                     <form onSubmit={this.save}>

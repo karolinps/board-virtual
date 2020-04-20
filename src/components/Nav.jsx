@@ -4,6 +4,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import HomeIcon from '@material-ui/icons/Home';
+import { Link } from "react-router-dom";
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,7 +16,11 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         flexGrow: 1,
+        textAlign:"center"
     },
+    IconHome : {
+        color:"#fff !important"
+    }
 }));
 
 export default function ButtonAppBar() {
@@ -24,13 +30,17 @@ export default function ButtonAppBar() {
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                    <HomeIcon />
+                    <Link to="/"  className={classes.IconHome}>
+                        <Tooltip title="Dashboard">
+                            <HomeIcon />
+                        </Tooltip>
+                    </Link>
                     <Typography variant="h6" className={classes.title}>
                         Board
           </Typography>
                 </Toolbar>
             </AppBar>
-            <br/>
+            <br />
         </div>
     );
 }
