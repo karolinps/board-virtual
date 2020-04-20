@@ -28,6 +28,7 @@ export default class Dashboard extends Component {
             boards: [],
             isOpen: false,
             title: "",
+            description:"",
             isOpenUpdate: false,
             isOpenDelete: false
         }

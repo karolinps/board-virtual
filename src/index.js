@@ -23,7 +23,7 @@ ReactDOM.render(
   <Router>
     <NavigationBar />
     <Switch>
-      <Route exact path="/taks/:id" render={() => <Taks />} />
+      <Route exact path="/taks/:id" render={(props) => <Taks {...props}/>} />
       <Route exact path="/" render={() => <Dashboard />} />
       <Route exact path="/dashboard" render={() => <Dashboard />} />
 

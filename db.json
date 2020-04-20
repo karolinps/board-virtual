@@ -10,5 +10,25 @@
       "description": "Proyecto sobre 2c",
       "id": 3
     }
+  ],
+  "taks": [
+    {
+      "title": "Tarea 1",
+      "description": "Descripcion tarea 1a",
+      "id": 1,
+      "boardId": 1
+    },
+    {
+      "title": "otra tarea",
+      "description": "otra tarea 2a",
+      "boardId": 1,
+      "id": 3
+    },
+    {
+      "title": "Tarea abc",
+      "description": "Descripcion abc",
+      "boardId": 3,
+      "id": 4
+    }
   ]
 }
